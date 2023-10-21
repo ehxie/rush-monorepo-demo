@@ -18,10 +18,10 @@ npx husky install
 
 ```json
 {
-    "scripts": {
-        "prepare": "husky install",
-        // ...
-    }
+  "scripts": {
+    "prepare": "husky install"
+    // ...
+  }
 }
 ```
 

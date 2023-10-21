@@ -91,3 +91,46 @@ pnpm add -w -D eslint-config-prettier eslint-plugin-prettier
   }
 }
 ```
+
+4.linter-staged
+
+- 能够只检查 staged 的文件(即进行 git add 的文件)，而不是全量
+
+```bash
+pnpm add -w -D lint-staged
+```
+
+新增 `.lintstagedrc.js`
+
+```js
+const { ESLint } = require('eslint');
+
+/**
+ * 把要忽略的文件都过滤掉
+ * @param {string[]} files
+ * @returns
+ */
+const removeIgnoreFiles = async (files) => {
+  const eslint = new ESLint();
+  const ignoreFiles = await Promise.all(
+    files.map((file) => eslint.isPathIgnored(file)),
+  );
+  const filterFiles = files.filter((_, index) => !ignoreFiles[index]);
+  return filterFiles.join(' ');
+};
+
+module.exports = {
+  // 这里的 files 是被 lint-staged 检测到的文件
+  '*': async (files) => {
+    const filesToLint = await removeIgnoreFiles(files);
+    return [`eslint ${filesToLint} --max-warnings=0`];
+  },
+};
+```
+
+修改 `.husky/pre-commit`
+
+```sh
+- pnpm lint
++ npx lint-staged
+```
