@@ -168,3 +168,35 @@ pnpm add -w -D @commitlint/config-conventional @commitlint/cli
 ```bash
 npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'
 ```
+
+### commitizen
+
+帮助我们生成规范的 git message
+
+```bash
+pnpm add -w -D commitizen cz-conventional-changelog
+```
+
+新增 `.czrc.json`
+
+```json
+{
+    // 适配器，使用该适配器 commitzen 将已 Angular 的规范引导我们完成 git message 的创建
+    "path": "cz-conventional-changelog"
+}
+
+```
+
+修改 `package.json`
+
+```json
+{
+  // ...
+  "scripts": {
+    // ...
+    "cz": "cz"
+  }
+}
+```
+
+提交代码时使用 `pnpm cz` 代替 `git commit`

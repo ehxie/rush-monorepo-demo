@@ -7,6 +7,7 @@
     "prepare": "husky install",
     "lint": "eslint ./ --ext .ts,.js,.json --max-warnings=0",
     "lint-staged": "lint-staged",
+    "cz": "cz",
     "format": "prettier --config .prettierrc  '.' --write",
     "format-watch": "onchange -d 1000 **/* -- prettier --config .prettierrc  '.' --write {{changed}}"
   },
@@ -19,6 +20,8 @@
     "@types/node": "^20.8.7",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
