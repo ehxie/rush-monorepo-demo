@@ -1,0 +1,10 @@
+{
+  "name": "@rush-monorepo-demo/my-toolchain",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "common toolchain",
+  //  使用 import {add} from '@rush-monorepo-demo/my-toolchain' 代替 import {add} from '@rush-monorepo-demo/my-toolchain/src/index.ts'
+  "main": "./src/index.ts",
+  "author": "ehxie",
+  "license": "MIT"
+}
