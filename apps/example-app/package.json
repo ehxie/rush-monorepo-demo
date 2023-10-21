@@ -1,0 +1,12 @@
+{
+    "name": "@rush-monorepo-demo/example-app",
+    "version": "1.0.0",
+    "description": "Example app monorepo",
+    "author": "ehxie",
+    "scripts": {
+        "dev": "ts-node ./src/index.ts"
+    },
+    "dependencies": {
+        "@rush-monorepo-demo/my-toolchain": "workspace:^1.0.0"
+    }
+}
