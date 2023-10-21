@@ -10,6 +10,7 @@ importers:
       eslint: ^8.52.0
       eslint-config-prettier: ^9.0.0
       eslint-plugin-prettier: ^5.0.1
+      husky: ^8.0.3
       onchange: ^7.1.0
       prettier: ^3.0.3
       ts-node: ^10.9.1
@@ -21,6 +22,7 @@ importers:
       eslint: 8.52.0
       eslint-config-prettier: 9.0.0_eslint@8.52.0
       eslint-plugin-prettier: 5.0.1_tdklu2e5wzjzhu3tvwx7hl3jdy
+      husky: 8.0.3
       onchange: 7.1.0
       prettier: 3.0.3
       ts-node: 10.9.1_wgftluouiaediqiazhryzwhram
@@ -843,6 +845,12 @@ packages:
   /human-signals/4.3.1:
     resolution: {integrity: sha512-nZXjEF2nbo7lIw3mgYjItAfgQXog3OjJogSbKa2CQIIvSGWcKgeJnQlNXip6NglNzYH45nSRiEVimMvYL8DDqQ==}
     engines: {node: '>=14.18.0'}
+    dev: true
+
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /ignore/5.2.4:
