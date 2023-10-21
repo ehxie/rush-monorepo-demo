@@ -1,32 +1,32 @@
 # 使用工具规范项目的代码
 
-1.ESLint
+`ESLint`
 
 - 代码风格检查
 
-  2.Prettier
+`Prettier`
 
 - 代码格式化
 
-  3.Husky
+`Husky`
 
 - 用于管理 git hook，进行代码提交前检查
 
-  4.Lint-staged
+`Lint-staged`
 
 - 只检查本次提交的代码，而不是全量
 
 - 同时忽略我们不需要检查的文件
 
-  5.Commitlint && Commitzen
+`Commitlint && Commitzen`
 
 - 对 commit message 进行格式检查和规范，使得项目中 commit message 统一
 
-  - 有利于在后续利用 commit message 生成 CHANGELOG 和 release note
+- 有利于在后续利用 commit message 生成 CHANGELOG 和 release note
 
 ## 安装
 
-1.eslint
+### eslint
 
 ```bash
 pnpm add -w -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
@@ -44,7 +44,7 @@ pnpm add -w -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 
 在项目根目录下执行 `pnpm lint`
 
-2.prettier
+### prettier
 
 ```bash
 pnpm add -w -D prettier
@@ -60,7 +60,9 @@ pnpm add -w -D prettier
 }
 ```
 
-3.需要进行一定的配置来保证 prettier 和 eslint 能够正确的协同工作
+### 解决 Prettier 和 ESlint 的冲突
+
+需要进行一定的配置来保证 prettier 和 eslint 能够正确的协同工作
 
 - ESLint 的代码风格规则会与 Prettier 冲突，所以需要应用 eslint-config-prettier 插件来关闭 ESLint 与 Prettier 的冲突，并且使用 eslint-plugin-prettier 插件来将 Prettier 规则集转换为 ESLint 规则集
 
@@ -92,7 +94,7 @@ pnpm add -w -D eslint-config-prettier eslint-plugin-prettier
 }
 ```
 
-4.linter-staged
+`linter-staged`
 
 - 能够只检查 staged 的文件(即进行 git add 的文件)，而不是全量
 
@@ -133,4 +135,36 @@ module.exports = {
 ```sh
 - pnpm lint
 + npx lint-staged
+```
+
+### husky
+
+[参考](/docs/rush/Husky.md)
+
+### commitlint
+
+commitlint 工具搭配 husky，实现在 commit 前对 git message 进行格式检查
+
+```bash
+pnpm add -w -D @commitlint/config-conventional @commitlint/cli
+```
+
+新增 `.commitlintrc.json`
+
+- 要求 scope 不能为空
+
+```json
+{
+    "extends": ["@commitlint/config-conventional"],
+    "rules": {
+        "scope-empty": [2, "never"]
+    }
+}
+
+```
+
+新增 hook
+
+```bash
+npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'
 ```
