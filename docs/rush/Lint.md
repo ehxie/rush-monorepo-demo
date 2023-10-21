@@ -4,21 +4,21 @@
 
 - 代码风格检查
 
-2.Prettier
+  2.Prettier
 
 - 代码格式化
 
-3.Husky
+  3.Husky
 
 - 用于管理 git hook，进行代码提交前检查
 
-4.Lint-staged
+  4.Lint-staged
 
 - 只检查本次提交的代码，而不是全量
 
 - 同时忽略我们不需要检查的文件
 
-5.Commitlint && Commitzen
+  5.Commitlint && Commitzen
 
 - 对 commit message 进行格式检查和规范，使得项目中 commit message 统一
 
@@ -36,7 +36,7 @@ pnpm add -w -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 
 ```json
 {
-    "scripts": {
+  "scripts": {
     "lint": "eslint ./ --ext .ts,.js,.json --max-warnings=0"
   }
 }
@@ -54,7 +54,7 @@ pnpm add -w -D prettier
 
 ```json
 {
-    "scripts": {
+  "scripts": {
     "format": "prettier --config .prettierrc  '.' --write"
   }
 }

@@ -6,7 +6,7 @@
 pnpm add @rush-monorepo-demo/my-toolchain
 ```
 
-> 可以看到依赖是以  `workspace:^1.0.0` 的方式安装的
+> 可以看到依赖是以 `workspace:^1.0.0` 的方式安装的
 
 ## setup
 

@@ -1,19 +1,19 @@
 {
-    "compilerOptions": {
-        // ts --build 相关
-        "composite": true,
-        "incremental": true,
-        // 生成 .js .d.ts 和 sourceMap 相关
-        "declaration": true,
-        "declarationMap": true,
-        "emitDeclarationOnly": true,
-        "noEmitOnError": true,
-        "skipLibCheck": true,
-        // CommonJS 和 ESModule 之间互操作性有关
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        // 其他
-        "resolveJsonModule": true,
-        "strict": true
-    }
+  "compilerOptions": {
+    // ts --build 相关
+    "composite": true,
+    "incremental": true,
+    // 生成 .js .d.ts 和 sourceMap 相关
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    // CommonJS 和 ESModule 之间互操作性有关
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // 其他
+    "resolveJsonModule": true,
+    "strict": true
+  }
 }

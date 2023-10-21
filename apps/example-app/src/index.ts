@@ -1,8 +1,8 @@
-import { add } from '@rush-monorepo-demo/my-toolchain'
+import { add } from '@rush-monorepo-demo/my-toolchain';
 const main = () => {
-    console.log('Hello World');
+  console.log('Hello World');
 
-    console.log(`sum: ${add(1, 2)}`);
-}
+  console.log(`sum: ${add(1, 2)}`);
+};
 
-main()
+main();
