@@ -200,3 +200,23 @@ pnpm add -w -D commitizen cz-conventional-changelog
 ```
 
 提交代码时使用 `pnpm cz` 代替 `git commit`
+
+### VSCode 插件
+
+ESLint: 开启后会在语法错误时在编辑器中显示错误
+
+修改 `settings.json`
+
+- 在保存时自动修复格式问题
+
+```json
+{
+  "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true,
+      "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true
+}
+```
+
+> 要使项目成员都使用同一份 `settings.json` 配置，可以在 `.vscode` 目录下新建一个 `settings.json`，这样所有项目成员都会使用该配置
