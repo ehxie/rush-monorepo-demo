@@ -205,9 +205,20 @@ pnpm add -w -D commitizen cz-conventional-changelog
 
 ESLint: 开启后会在语法错误时在编辑器中显示错误
 
+Prettier: 格式化代码
+
 修改 `settings.json`
 
-- 在保存时自动修复格式问题
+- 使用 Prettier 在保存时自动修复格式问题
+
+```json
+{
+  
+  "editor.formatOnSave": true
+}
+```
+
+如果想用 ESLint 进行格式化
 
 ```json
 {
@@ -215,7 +226,8 @@ ESLint: 开启后会在语法错误时在编辑器中显示错误
       "source.fixAll.stylelint": true,
       "source.fixAll.eslint": true
   },
-  "editor.formatOnSave": true
+  // 关闭自带的格式化功能
+  "editor.formatOnSave": false
 }
 ```
 
