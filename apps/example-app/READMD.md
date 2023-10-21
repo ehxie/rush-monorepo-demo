@@ -13,5 +13,10 @@ pnpm add @rush-monorepo-demo/my-toolchain
 运行项目
 
 ```base
+# 源码方式运行(项目目录下)
 pnpm dev
+
+# 编译后运行(根目录下)
+pnpm example-app build
+pnpm example-app start
 ```

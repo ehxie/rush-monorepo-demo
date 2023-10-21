@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.base.json",
+  // 在 tsc --build 时，会自动对 reference 中的包进行编译
+  "references": [
+    {
+      // path 所指定的路径为文件夹时，该文件夹下需要有一个 tsconfig.json 文件
+      "path": "../../tools/my-toolchain"
+    }
+  ],
+  "compilerOptions": {
+    "declarationMap": false,
+    "emitDeclarationOnly": false,
+    "rootDir": "./src",
+    "outDir": "./dist",
+    // 下面三个设置不再增量编译，且不生成 .d.ts 文件
+    "incremental": false,
+    "composite": false,
+    "declaration": false
+  }
+}

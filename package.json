@@ -9,7 +9,8 @@
     "lint-staged": "lint-staged",
     "cz": "cz",
     "format": "prettier --config .prettierrc  '.' --write",
-    "format-watch": "onchange -d 1000 **/* -- prettier --config .prettierrc  '.' --write {{changed}}"
+    "format-watch": "onchange -d 1000 **/* -- prettier --config .prettierrc  '.' --write {{changed}}",
+    "example-app": "pnpm --filter @rush-monorepo-demo/example-app"
   },
   "keywords": [],
   "author": "",

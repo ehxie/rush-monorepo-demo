@@ -6,3 +6,5 @@
 # 使用 -w 前需要确保 pnpm 知道该仓库是 monorepo（需要有 `pnpm-workspace.yaml`）
 pnpm add -w -D typescript ts-node @types/node
 ```
+
+> 可以直接使用 ts-node 运行 ts 文件
