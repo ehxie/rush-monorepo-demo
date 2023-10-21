@@ -7,12 +7,20 @@
     "eslint:recommended",
     // 使用了 TS 推荐的规则，且禁用了 eslint:recommended 中与之冲突的规则
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/eslint-recommended",
+    // (即 prettier-config-prettier) 关闭所有可能干扰 Prettier 的规则，确保将其放在最后，这样才有机会覆盖其他配置
+    "prettier"
   ],
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2021
   },
   // 使得我们可以使用 typescript-eslint 中定义的规则集
-  "plugins": ["@typescript-eslint"]
+  "plugins": ["@typescript-eslint", "prettier"],
+  "rules": {
+    "prettier/prettier": "error", // 打开 prettier 插件提供的规则，该插件从 ESLint 内运行 Prettier
+    // 下面两条规则与 Prettier 插件一起使用会出现问题：https://github.com/prettier/eslint-plugin-prettier/blob/master/README.md#arrow-body-style-and-prefer-arrow-callback-issue
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off"
+  }
 }
