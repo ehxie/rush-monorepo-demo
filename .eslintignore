@@ -1,0 +1,6 @@
+**/node_modules/
+pnpm-lock.yaml
+
+common/temp/
+common/scripts/
+common/common/
