@@ -18,6 +18,14 @@
       "safeForSimultaneousRushProcesses": true,
       "autoinstallerName": "rush-prettier",
       "shellCommand": "prettier --config .prettierrc  '.' --write"
+    },
+    {
+      "name": "commitlint",
+      "commandKind": "global",
+      "summary": "Used by the commit-msg Git hook. This command invokes commitlint to lint commit message.",
+      "safeForSimultaneousRushProcesses": true,
+      "autoinstallerName": "rush-commitlint",
+      "shellCommand": "commitlint --config common/autoinstallers/rush-commitlint/.commitlintrc"
     }
     // {
     //   /**
@@ -190,6 +198,13 @@
    * For example, you might define a "--production" parameter for the "rush build" command.
    */
   "parameters": [
+    {
+      "parameterKind": "string",
+      "argumentName": "FILENAME",
+      "longName": "--edit",
+      "description": "read last commit message from the specified file or fallbacks to ./.git/COMMIT_EDITMSG",
+      "associatedCommands": ["commitlint"]
+    }
     // {
     //   /**
     //    * (Required) Determines the type of custom parameter.
