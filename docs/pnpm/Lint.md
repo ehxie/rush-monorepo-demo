@@ -155,12 +155,11 @@ pnpm add -w -D @commitlint/config-conventional @commitlint/cli
 
 ```json
 {
-    "extends": ["@commitlint/config-conventional"],
-    "rules": {
-        "scope-empty": [2, "never"]
-    }
+  "extends": ["@commitlint/config-conventional"],
+  "rules": {
+    "scope-empty": [2, "never"]
+  }
 }
-
 ```
 
 新增 hook
@@ -181,10 +180,9 @@ pnpm add -w -D commitizen cz-conventional-changelog
 
 ```json
 {
-    // 适配器，使用该适配器 commitzen 将已 Angular 的规范引导我们完成 git message 的创建
-    "path": "cz-conventional-changelog"
+  // 适配器，使用该适配器 commitzen 将已 Angular 的规范引导我们完成 git message 的创建
+  "path": "cz-conventional-changelog"
 }
-
 ```
 
 修改 `package.json`
@@ -213,7 +211,6 @@ Prettier: 格式化代码
 
 ```json
 {
-  
   "editor.formatOnSave": true
 }
 ```
@@ -223,8 +220,8 @@ Prettier: 格式化代码
 ```json
 {
   "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": true,
-      "source.fixAll.eslint": true
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
   },
   // 关闭自带的格式化功能
   "editor.formatOnSave": false
