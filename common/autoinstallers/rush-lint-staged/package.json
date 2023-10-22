@@ -1,0 +1,9 @@
+{
+  "name": "rush-lint-staged",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "eslint": "^8.52.0",
+    "lint-staged": "^15.0.2"
+  }
+}

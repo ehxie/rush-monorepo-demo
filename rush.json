@@ -313,6 +313,14 @@
    * 3. It's useful to have a centralized inventory of all projects and their important metadata.
    */
   "projects": [
+    {
+      "packageName": "@rush-monorepo-demo/example-app",
+      "projectFolder": "apps/example-app"
+    },
+    {
+      "packageName": "@rush-monorepo-demo/my-toolchain",
+      "projectFolder": "tools/my-toolchain"
+    }
     // {
     //   /**
     //    * The NPM package name of the project (must match package.json)

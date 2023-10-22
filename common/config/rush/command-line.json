@@ -26,6 +26,14 @@
       "safeForSimultaneousRushProcesses": true,
       "autoinstallerName": "rush-commitlint",
       "shellCommand": "commitlint --config common/autoinstallers/rush-commitlint/.commitlintrc"
+    },
+    {
+      "name": "lint-staged",
+      "commandKind": "global",
+      "summary": "Run lint-staged",
+      "shellCommand": "lint-staged",
+      "autoinstallerName": "rush-lint-staged",
+      "safeForSimultaneousRushProcesses": true
     }
     // {
     //   /**

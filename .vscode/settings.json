@@ -1,6 +1,10 @@
 {
   // 关闭 vscode 自带的保存格式化(与 eslint 不兼容)
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": false,
+    "source.fixAll.eslint": false
+  },
 
   // 使用 prettier 格式化
   "[json]": {
