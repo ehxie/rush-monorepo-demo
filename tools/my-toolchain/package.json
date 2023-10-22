@@ -6,6 +6,11 @@
   "main": "./dist/index.js",
   "author": "ehxie",
   "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "compile": "tsc --build",
+    "build": "pnpm clean; pnpm compile"
+  },
   "devDependencies": {
     "@typescript-eslint/parser": "~6.8.0",
     "typescript": "~5.2.2",
