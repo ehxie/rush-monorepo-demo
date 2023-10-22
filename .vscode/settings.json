@@ -1,6 +1,6 @@
 {
   // 关闭 vscode 自带的保存格式化(与 eslint 不兼容)
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": false,
     "source.fixAll.eslint": false

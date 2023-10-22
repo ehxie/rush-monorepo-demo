@@ -1,5 +1,9 @@
 # 如何使用 rush
 
+## 初始化一个仓库
+
+> 注意 Node 版本
+
 1.安装 rush
 
 ```bash
@@ -37,20 +41,20 @@ rm -f .gitignore      # (if it makes sense)
 
 ## 安装依赖
 
-1.安装公共依赖
-
-需要有 `pnpm-workspace.yaml` 告诉 pnpm 使用 monorepo 管理这个项目
-
-这样就可以使用 pnpm 来安装依赖
-
-- 安装在根目录可以使用 -w 参数
+rush 不支持安装全局依赖（不希望有幽灵依赖），所以安装依赖都需要进入到具体的项目目录下进行安装
 
 ```bash
-# 例如安装 typescript
-pnpm install -w -D typescript
+rush add -p <moduleName>
 ```
 
-2.安装项目依赖
-只需要在项目目录下执行 `pnpm add <package>` 即可
+Cli 的那种依赖可以使用 [AutoInstallers](/docs/rush/AutoInstallers.md)
 
-如果这里是依赖是当前 monorepo 下的项目，请确保已经在 `pnpm-workspace.yaml` 中配置了
+使用 `rush update` 更新依赖
+
+## 构建
+
+- 在 `rush.json` 中的 `projects` 中声明的项目，只要在 `package.json` 中的 `scripts` 中声明了 `build` 命令，那么就可以在 `rush build` 的时候构建
+
+```bash
+rush build
+```
